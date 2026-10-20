@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid-container{
+    max-width: 90vw;
+    height: 100vh;
+    padding: 1em;
+    margin: auto;
+    display: grid;
+    background-color: bisque;
+    border: 5px solid black;
+    grid-template-columns: repeat(6 1fr);
+    gap: 1em;
+}
+.grid-container div{
+    background-color: red;
+}
+.grid-container>div:first-child{
+    grid-column: 1/7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.grid-container>div:nth-child(2){
+    grid-column: 1/7;
+}
+.grid-container>div:nth-child(3){
+    grid-column: 1/4;
+}
+.grid-container>div:nth-child(4){
+    grid-column: 4/7;
+}
+.grid-container>div:last-child{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    border: 5px solid black;
+    background-color: transparent;
+    grid-column: 1/7;
+    padding: 5px;
+}
+a{
+    justify-content: space-around;
+    color: blanchedalmond;
+    text-decoration: none;
+
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+/* Mobile */
+@media screen and (max-width:500px){
+    .grid-container{
+        background-color: green;
+        grid-template-columns: 1fr;
+        height: 100vh;
+    }
+    .grid-container>div,
+    .grid-container>div:first-child,
+    .grid-container>div:nth-child(2),
+    .grid-container>div:nth-child(3),
+    .grid-container>div:nth-child(4),
+    .grid-container>div:last-child{
+        grid-column: auto;
+        grid-row: auto;
+        border: none;
+        grid-template-columns: 1fr;
+    }
+}
+/* Tablet */
+@media screen and ((min-width:500px) and (max-width:900px)){
+    .grid-container{
+        background-color: white;
+        grid-template-columns:1fr;
+        height: 100vh;
+    }
+    .grid-container>div,
+    .grid-container>div:first-child,
+    .grid-container>div:nth-child(2),
+    .grid-container>div:nth-child(3),
+    .grid-container>div:nth-child(4),
+    .grid-container>div:last-child{
+        grid-column: auto;
+        grid-row: auto;
+        border: none;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
